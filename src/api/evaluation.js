@@ -5,10 +5,10 @@ const api = {
   comprehensivelist:'comprehensivelist.json',
   comprehensivedet:'comprehensivedet.json',
   comprehensivesel:'comprehensivesel.json',
-  resultlistlist:'Resultlist.json',
-  listmembertab3:'infosellist.json',
-  listmembertab4:'tab4.json',
-  listmembertab5:'tab5.json',
+  resultlist:'Resultlist.json',
+  resultdet:'Resultdet.json',
+  resultlist2:'Resultlist2.json',
+  subjectlist:'Resultlist2.json',
 }
 /********************会员列表***********************/
 export default api
@@ -48,10 +48,10 @@ export function getComprehensiveSel (parameter) {
   })
 }
 
-// 会员查看基本信息列表tab2
+// 测评结果列表
 export function getResultlistList (parameter) {
   return axios({
-    url: URL.bdURL + api.resultlistlist,
+    url: URL.bdURL + api.resultlist,
     method: 'get',
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
@@ -60,10 +60,10 @@ export function getResultlistList (parameter) {
   })
 }
 
-// 会员查看基本信息列表tab3
-export function getListMemberTab3 (parameter) {
+// 测评结果基本信息
+export function getResultDet (parameter) {
   return axios({
-    url: URL.bdURL + api.listmembertab3,
+    url: URL.bdURL + api.resultdet,
     method: 'get',
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
@@ -72,10 +72,10 @@ export function getListMemberTab3 (parameter) {
   })
 }
 
-// 会员查看基本信息列表tab4
-export function getListMemberTab4 (parameter) {
+// 测评结果查看列表
+export function getResultList2 (parameter) {
   return axios({
-    url: URL.bdURL + api.listmembertab4,
+    url: URL.bdURL + api.resultlist2,
     method: 'get',
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
@@ -84,10 +84,10 @@ export function getListMemberTab4 (parameter) {
   })
 }
 
-// 会员查看基本信息列表tab5
-export function getListMemberTab5 (parameter) {
+// 测评题目列表
+export function getSubjectList (parameter) {
   return axios({
-    url: URL.bdURL + api.listmembertab5,
+    url: URL.bdURL + api.subjectlist,
     method: 'get',
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'

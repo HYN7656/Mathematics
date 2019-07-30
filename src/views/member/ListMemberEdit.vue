@@ -4,9 +4,33 @@
       :wrapperCol="{ span: 24 }"
       style="text-align: right"
     >
-      <a-button type="primary" style="margin-right: 25px">综合报告</a-button>
+      <a-button type="primary" style="margin-right: 25px" @click="openZHM">综合报告</a-button>
       <a-button type="primary">返回</a-button>
-
+      <a-modal
+        title="测评报告"
+        v-model="ZHvisible"
+        :footer="null"
+        class="cp-model"
+      >
+        <a-card :bordered="false" class="card" title="测评结果等级评定">
+          123123
+        </a-card>
+        <a-card :bordered="false" class="card" title="数学素养">
+          123123
+        </a-card>
+        <a-card :bordered="false" class="card" title="思维方法">
+          123123
+        </a-card>
+        <a-card :bordered="false" class="card" title="知识板块">
+          123123
+        </a-card>
+        <a-card :bordered="false" class="card" title="细分知识点">
+          1231231
+        </a-card>
+        <a-card :bordered="false" class="card" title="综合评价">
+          1231233
+        </a-card>
+      </a-modal>
     </a-form-item>
   <a-card :bordered="false" class="card" title="会员详情">
     <!--<a-divider style="margin-bottom: 32px"/>-->
@@ -497,6 +521,7 @@
     },
     data () {
       return {
+        ZHvisible:false,
         form: this.$form.createForm(this),
         number: {
           value: 0,
@@ -505,7 +530,7 @@
         option: [{ id: 1, value: "例1" }, { id: 2, value: "例2" }, { id: 3, value: "例3" }],
         // 高级搜索 展开/关闭
         advanced: false,
-        visible:true,
+        visible:false,
         // tab查询参数
         queryParam1: {},
         queryParam2: {},
@@ -723,6 +748,9 @@
       })
     },
     methods: {
+      openZHM(){
+        this.ZHvisible = true;
+      },
       openMol(){
         this.visible = true;
       },
@@ -786,8 +814,11 @@
     }
   }
 </script>
-<style scoped>
+<style>
   .card{
     margin-bottom: 24px;
+  }
+  .cp-model .ant-modal-body {
+    background: #F0F2F5;
   }
 </style>

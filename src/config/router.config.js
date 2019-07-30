@@ -254,6 +254,20 @@ export const asyncRouterMap = [
             component: () => import('@/views/evaluation/ResultEdit'),
             meta: { title: '测评结果查看', keepAlive: false },
             hidden: true
+          },
+          {
+            path: '/evaluation/subject',
+            name: 'Subject',
+            hideChildrenInMenu: true,
+            component: () => import('@/views/evaluation/Subject'),
+            meta: { title: '测评题目', keepAlive: false }
+          },
+          {
+            path: '/evaluation/subjectEdit',
+            name: 'SubjectEdit',
+            component: () => import('@/views/evaluation/SubjectEdit'),
+            meta: { title: '测评题目新增', keepAlive: false },
+            hidden: true
           }
         ]
       },
